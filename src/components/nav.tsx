@@ -1,3 +1,3 @@
 export default function Nav() {
-  return <div className='bg-red-500'>Nav</div>;
+  return <div className=''>안녕하세요.</div>;
 }
