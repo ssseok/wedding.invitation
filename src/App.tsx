@@ -1,9 +1,12 @@
-import Nav from '@components/nav';
+import SplashScreen from '@components/splash-screen';
 
 function App() {
   return (
     <>
-      <Nav />
+      <SplashScreen />
+      <main className='container'>
+        <p>안녕하세요</p>
+      </main>
     </>
   );
 }
