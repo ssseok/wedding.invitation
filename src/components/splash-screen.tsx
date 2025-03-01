@@ -31,7 +31,7 @@ function SplashScreen({
   if (!splashScreenElement) return null;
 
   return createPortal(
-    <div className='fixed inset-0 z-50  bg-[url("/src/assets/wedding.png")] w-full h-full bg-cover bg-center bg-no-repeat animate-fade-out opacity-100 delay-1200'></div>,
+    <div className='fixed inset-0 z-50  bg-[url("/src/assets/wedding.png")] max-w-screen-sm mx-auto w-full h-full bg-cover bg-center bg-no-repeat animate-fade-out opacity-100 delay-1200'></div>,
     splashScreenElement,
   );
 }
