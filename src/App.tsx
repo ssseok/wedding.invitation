@@ -2,9 +2,20 @@ import SplashScreen from '@components/splash-screen';
 import Layout from '@/common/components/layout';
 import VideoPlayer from '@/components/video-player';
 import Intersect from '@/common/components/intersect';
-import { Separator } from './common/components/ui/separator';
+import CalendarScreen from '@/components/calendar-screen';
+import Contact from '@/components/contact';
+import WeddingInvitation from '@/components/wedding-invitation';
+import Phrase from '@/components/phrase';
 
 function App() {
+  // 새로고침 시 스크롤 최상단으로 이동
+  // useEffect(() => {
+  //   window.onbeforeunload = function pushRefresh() {
+  //     window.scrollTo(0, 0);
+  //   };
+  // }, []);
+  // 결혼식 날짜를 문자열로 지정
+
   return (
     <>
       <SplashScreen />
@@ -13,28 +24,32 @@ function App() {
         <section className='my-20 w-full'>
           <VideoPlayer />
         </section>
+        {/* 결혼 초대장 */}
         <section className='bg-white mt-20'>
           <Intersect>
-            <h2 className='text-center text-xl font-en '>wedding invitation</h2>
-            <div className='flex justify-center my-4'>
-              <img
-                src='https://github.com/bepyan/charlan-byul/assets/65283190/2a6bfd15-e502-4d61-b94d-eec5758061a4'
-                alt='진주'
-                className='w-3 h-3 aspect-square'
-              />
-            </div>
-            <div className='text-center'>
-              <div className='flex justify-center items-center gap-1 h-3 space-x-0.5'>
-                <span>○○○</span>
-                <Separator orientation='vertical' />
-                <span>○○○</span>
-              </div>
-              <div className='mt-4 text-sm text-gy-6 leading-7'>
-                ○○○○년 ○○월 ○○일 ○○일 낮 ○○:○○
-                <br />
-                ○○○웨딩 ○F ○○홀
-              </div>
-            </div>
+            <WeddingInvitation />
+          </Intersect>
+          <div className='mt-10'>
+            <img
+              className='w-full h-full aspect-4/3 pointer-events-none'
+              src='https://t1.daumcdn.net/brunch/service/user/d4v5/image/ZW3pLUS0Yu60Q81nwUiTdo7RWNc.jpeg'
+              alt='결혼사진'
+            />
+          </div>
+        </section>
+        {/* 결혼 청접장 문구 & 연락처 */}
+        <section className='text-sm mt-10'>
+          <Intersect>
+            <Phrase />
+          </Intersect>
+          <Intersect>
+            <Contact />
+          </Intersect>
+        </section>
+        {/* 결혼식 날짜 */}
+        <section className='my-20'>
+          <Intersect>
+            <CalendarScreen />
           </Intersect>
         </section>
       </Layout>
