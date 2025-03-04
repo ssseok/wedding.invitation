@@ -125,6 +125,10 @@
     @apply bg-background text-foreground;
   }
 
+  button {
+    @apply cursor-pointer;
+  }
+
   .font-en {
     font-family: 'Cormorant SC', serif;
   }
