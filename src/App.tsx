@@ -1,11 +1,12 @@
-import SplashScreen from '@components/splash-screen';
 import Layout from '@/common/components/layout';
-import VideoPlayer from '@/components/video-player';
 import Intersect from '@/common/components/intersect';
-import CalendarScreen from '@/components/calendar-screen';
-import Contact from '@/components/contact';
+import SplashScreen from '@components/splash-screen';
+import VideoPlayer from '@/components/video-player';
 import WeddingInvitation from '@/components/wedding-invitation';
 import Phrase from '@/components/phrase';
+import Contact from '@/components/contact';
+import CalendarScreen from '@/components/calendar-screen';
+import Gallery from '@/components/gallery';
 
 function App() {
   // 새로고침 시 스크롤 최상단으로 이동
@@ -25,7 +26,7 @@ function App() {
           <VideoPlayer />
         </section>
         {/* 결혼 초대장 */}
-        <section className='bg-white mt-20'>
+        <section className='bg-background mt-20'>
           <Intersect>
             <WeddingInvitation />
           </Intersect>
@@ -50,6 +51,32 @@ function App() {
         <section className='my-20'>
           <Intersect>
             <CalendarScreen />
+          </Intersect>
+        </section>
+        {/* 결혼식 갤러리 */}
+        <section className='my-20'>
+          <Intersect>
+            <Gallery
+              images={[
+                'https://t1.daumcdn.net/brunch/service/user/d4v5/image/ZW3pLUS0Yu60Q81nwUiTdo7RWNc.jpeg',
+                'https://t1.daumcdn.net/brunch/service/user/d4v5/image/ZW3pLUS0Yu60Q81nwUiTdo7RWNc.jpeg',
+                'https://t1.daumcdn.net/brunch/service/user/d4v5/image/ZW3pLUS0Yu60Q81nwUiTdo7RWNc.jpeg',
+                'https://t1.daumcdn.net/brunch/service/user/d4v5/image/ZW3pLUS0Yu60Q81nwUiTdo7RWNc.jpeg',
+                'https://t1.daumcdn.net/brunch/service/user/d4v5/image/ZW3pLUS0Yu60Q81nwUiTdo7RWNc.jpeg',
+                'https://t1.daumcdn.net/brunch/service/user/d4v5/image/ZW3pLUS0Yu60Q81nwUiTdo7RWNc.jpeg',
+                'https://t1.daumcdn.net/brunch/service/user/d4v5/image/ZW3pLUS0Yu60Q81nwUiTdo7RWNc.jpeg',
+                'https://t1.daumcdn.net/brunch/service/user/d4v5/image/ZW3pLUS0Yu60Q81nwUiTdo7RWNc.jpeg',
+                'https://t1.daumcdn.net/brunch/service/user/d4v5/image/ZW3pLUS0Yu60Q81nwUiTdo7RWNc.jpeg',
+                'https://t1.daumcdn.net/brunch/service/user/d4v5/image/ZW3pLUS0Yu60Q81nwUiTdo7RWNc.jpeg',
+                'https://t1.daumcdn.net/brunch/service/user/d4v5/image/ZW3pLUS0Yu60Q81nwUiTdo7RWNc.jpeg',
+                'https://t1.daumcdn.net/brunch/service/user/d4v5/image/ZW3pLUS0Yu60Q81nwUiTdo7RWNc.jpeg',
+                'https://t1.daumcdn.net/brunch/service/user/d4v5/image/ZW3pLUS0Yu60Q81nwUiTdo7RWNc.jpeg',
+                'https://t1.daumcdn.net/brunch/service/user/d4v5/image/ZW3pLUS0Yu60Q81nwUiTdo7RWNc.jpeg',
+                'https://t1.daumcdn.net/brunch/service/user/d4v5/image/ZW3pLUS0Yu60Q81nwUiTdo7RWNc.jpeg',
+                'https://t1.daumcdn.net/brunch/service/user/d4v5/image/ZW3pLUS0Yu60Q81nwUiTdo7RWNc.jpeg',
+                'https://t1.daumcdn.net/brunch/service/user/d4v5/image/ZW3pLUS0Yu60Q81nwUiTdo7RWNc.jpeg',
+              ]}
+            />
           </Intersect>
         </section>
       </Layout>
