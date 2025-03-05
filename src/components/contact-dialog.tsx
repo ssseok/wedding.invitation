@@ -1,3 +1,4 @@
+import { Button } from '@/common/components/ui/button';
 import {
   Dialog,
   DialogContent,
@@ -23,8 +24,8 @@ export default function ContactDialog({
 }) {
   return (
     <Dialog>
-      <DialogTrigger className='border rounded-full px-4 py-2 transition-colors active:bg-gray-50 select-none'>
-        연락하기
+      <DialogTrigger asChild>
+        <Button variant='outline'>연락하기</Button>
       </DialogTrigger>
       <DialogContent className='top-[50%] w-10/12 rounded-lg border'>
         <DialogTitle className='p-4 text-center'>연락처</DialogTitle>
