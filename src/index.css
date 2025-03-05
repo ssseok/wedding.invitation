@@ -132,6 +132,10 @@
   .font-en {
     font-family: 'Cormorant SC', serif;
   }
+
+  .animate-heart-beat {
+    animation: heart-beat 1.2s infinite linear;
+  }
 }
 
 @layer components {
@@ -147,6 +151,25 @@
     to {
       opacity: 0;
     }
+  }
+}
+
+/* 하트 애니메이션 */
+@keyframes heart-beat {
+  0% {
+    transform: scale(0.95);
+  }
+  5% {
+    transform: scale(1.1);
+  }
+  38% {
+    transform: scale(0.85);
+  }
+  60% {
+    transform: scale(0.95);
+  }
+  100% {
+    transform: scale(0.9);
   }
 }
 
@@ -213,10 +236,38 @@
 [data-animate-layer] > *:nth-child(10) {
   --stagger: 10;
 }
-[data-animate-layer] > *:nth-child(10) {
-  --stagger: 10;
+[data-animate-layer] > *:nth-child(11) {
+  --stagger: 11;
+}
+[data-animate-layer] > *:nth-child(12) {
+  --stagger: 12;
+}
+[data-animate-layer] > *:nth-child(13) {
+  --stagger: 13;
 }
 
+[data-animate-layer] > *:nth-child(14) {
+  --stagger: 14;
+}
+[data-animate-layer] > *:nth-child(15) {
+  --stagger: 15;
+}
+[data-animate-layer] > *:nth-child(16) {
+  --stagger: 16;
+}
+
+[data-animate-layer] > *:nth-child(17) {
+  --stagger: 17;
+}
+[data-animate-layer] > *:nth-child(18) {
+  --stagger: 18;
+}
+[data-animate-layer] > *:nth-child(19) {
+  --stagger: 19;
+}
+[data-animate-layer] > *:nth-child(20) {
+  --stagger: 20;
+}
 /* 스테이지 방식 순차 애니메이션 */
 [data-animate] > [data-animate-stage='1'] {
   --stagger: 1;
@@ -232,4 +283,22 @@
 }
 [data-animate] > [data-animate-stage='5'] {
   --stagger: 5;
+}
+
+[data-animate] > [data-animate-stage='6'] {
+  --stagger: 6;
+}
+[data-animate] > [data-animate-stage='7'] {
+  --stagger: 7;
+}
+[data-animate] > [data-animate-stage='8'] {
+  --stagger: 8;
+}
+
+[data-animate] > [data-animate-stage='9'] {
+  --stagger: 9;
+}
+
+[data-animate] > [data-animate-stage='10'] {
+  --stagger: 10;
 }

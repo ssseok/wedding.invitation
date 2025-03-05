@@ -15,7 +15,7 @@ export default function WeddingInvitation() {
       <div className='text-center'>
         <div className='flex justify-center items-center gap-1 h-3 space-x-0.5'>
           <span>○○○</span>
-          <Separator orientation='vertical' className='bg-black' />
+          <Separator orientation='vertical' className='bg-foreground' />
           <span>○○○</span>
         </div>
         <div className='mt-4 text-sm text-gy-6 leading-7'>
