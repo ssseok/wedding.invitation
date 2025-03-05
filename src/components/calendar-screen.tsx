@@ -4,7 +4,7 @@ import { ko } from 'date-fns/locale';
 import { useState } from 'react';
 
 export default function CalendarScreen() {
-  const weddingDate = parse('2025.03.03', 'yyyy.MM.dd', new Date());
+  const weddingDate = parse('2025.05.10', 'yyyy.MM.dd', new Date());
   const [date, setDate] = useState<Date | undefined>(weddingDate);
 
   return (
@@ -22,6 +22,7 @@ export default function CalendarScreen() {
           mode='single'
           selected={date}
           locale={ko}
+          defaultMonth={weddingDate}
           disabled={(date) =>
             date < new Date('2025-01-01') || date > new Date('2025-12-31')
           }
