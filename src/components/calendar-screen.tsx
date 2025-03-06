@@ -1,11 +1,9 @@
 import { Calendar } from '@/common/components/ui/calendar';
 import { parse } from 'date-fns';
 import { ko } from 'date-fns/locale';
-import { useState } from 'react';
 
 export default function CalendarScreen() {
   const weddingDate = parse('2025.05.10', 'yyyy.MM.dd', new Date());
-  const [date, setDate] = useState<Date | undefined>(weddingDate);
 
   return (
     <>
@@ -20,7 +18,7 @@ export default function CalendarScreen() {
       <div className='max-w-[400px] mx-auto md:max-w-[500px] lg:max-w-full'>
         <Calendar
           mode='single'
-          selected={date}
+          selected={weddingDate}
           locale={ko}
           defaultMonth={weddingDate}
           disabled={(date) =>

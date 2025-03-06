@@ -17,7 +17,6 @@ function SplashScreen({
   fadeOutTime = 3000,
 }: SplashScreenProps): JSX.Element | null {
   const [currentText, setCurrentText] = useState('');
-  const [currentIndex, setCurrentIndex] = useState(0);
   const [textIndex, setTextIndex] = useState(0);
 
   // 타이핑 효과
