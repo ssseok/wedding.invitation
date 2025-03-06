@@ -28,11 +28,7 @@ export default function Gallery({ images }: { images: string[] }) {
     <div>
       <h2 className='text-center text-xl font-en'>gallery</h2>
       <div className='flex justify-center my-4'>
-        <img
-          src='/src/assets/wedding-3.png'
-          alt='반지'
-          className='w-6 h-6 aspect-square'
-        />
+        <img src='/ring.png' alt='반지' className='w-6 h-6 aspect-square' />
       </div>
 
       {/* 이미지 그리드 */}

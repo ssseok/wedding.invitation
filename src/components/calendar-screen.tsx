@@ -9,11 +9,7 @@ export default function CalendarScreen() {
     <>
       <h2 className='text-center text-xl font-en'>calendar</h2>
       <div className='flex justify-center my-4'>
-        <img
-          src='/src/assets/wedding-3.png'
-          alt='반지'
-          className='w-6 h-6 aspect-square'
-        />
+        <img src='/ring.png' alt='반지' className='w-6 h-6 aspect-square' />
       </div>
       <div className='max-w-[400px] mx-auto md:max-w-[500px] lg:max-w-full'>
         <Calendar
