@@ -1,9 +1,9 @@
 @font-face {
   font-family: NanumMyeongjo;
   src:
-    url('./NanumMyeongjo-Regular.woff2') format('woff2'),
-    url('./NanumMyeongjo-Regular.woff') format('woff'),
-    url('./NanumMyeongjo-Regular.ttf') format('truetype');
+    url('./fonts/NanumMyeongjo-Regular.woff2') format('woff2'),
+    url('./fonts/NanumMyeongjo-Regular.woff') format('woff'),
+    url('./fonts/NanumMyeongjo-Regular.ttf') format('truetype');
   font-weight: 400;
   font-style: normal;
   font-display: swap;

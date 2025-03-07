@@ -1,6 +1,5 @@
 @import 'tailwindcss';
-@import './fonts/font.css';
-
+@import '../fonts/font.css';
 @plugin 'tailwindcss-animate';
 
 @custom-variant dark (&:is(.dark *));
