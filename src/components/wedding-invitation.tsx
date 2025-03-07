@@ -6,7 +6,11 @@ export default function WeddingInvitation() {
       <h2 className='text-center text-xl font-en '>wedding invitation</h2>
 
       <div className='flex justify-center my-4'>
-        <img src='/ring.png' alt='반지' className='w-6 h-6 aspect-square' />
+        <img
+          src='/src/assets/imgs/ring.png'
+          alt='반지'
+          className='w-6 h-6 aspect-square'
+        />
       </div>
       <div className='text-center'>
         <div className='flex justify-center items-center gap-1 h-3 space-x-0.5'>
