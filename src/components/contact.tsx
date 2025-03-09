@@ -2,7 +2,7 @@ import ContactDialog from './contact-dialog';
 
 export default function Contact() {
   return (
-    <>
+    <div className='mb-20'>
       <div className='mt-14 flex items-center justify-center gap-3'>
         <div>
           <div>○○○</div>
@@ -59,6 +59,6 @@ export default function Contact() {
           ]}
         />
       </div>
-    </>
+    </div>
   );
 }

@@ -7,6 +7,8 @@ import Phrase from '@/components/phrase';
 import Contact from '@/components/contact';
 import CalendarScreen from '@/components/calendar-screen';
 import Gallery from '@/components/gallery';
+import MapNaver from '@/components/map-naver';
+import MapInfo from '@/components/map-info';
 
 function App() {
   // 새로고침 시 스크롤 최상단으로 이동
@@ -22,11 +24,11 @@ function App() {
       <SplashScreen />
       <Layout>
         {/* 영상 플레이어 */}
-        <section className='my-20 w-full'>
+        <section className='py-20 w-full'>
           <VideoPlayer />
         </section>
         {/* 결혼 초대장 */}
-        <section className='bg-background mt-20'>
+        <section className='bg-background mt-10'>
           <Intersect>
             <WeddingInvitation />
           </Intersect>
@@ -39,7 +41,7 @@ function App() {
           </div>
         </section>
         {/* 결혼 청접장 문구 & 연락처 */}
-        <section className='text-sm mt-10'>
+        <section className='text-sm mt-20'>
           <Intersect>
             <Phrase />
           </Intersect>
@@ -77,6 +79,13 @@ function App() {
                 'https://t1.daumcdn.net/brunch/service/user/d4v5/image/ZW3pLUS0Yu60Q81nwUiTdo7RWNc.jpeg',
               ]}
             />
+          </Intersect>
+        </section>
+        <section className='my-20'>
+          <Intersect>
+            <h2 className='text-center pb-10'>오시는 길</h2>
+            <MapNaver />
+            <MapInfo />
           </Intersect>
         </section>
       </Layout>
