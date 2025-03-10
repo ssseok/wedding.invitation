@@ -117,7 +117,6 @@ function App() {
               ]}
             />
             <BankAccordion
-              className='mt-2'
               title='신부측 계좌번호'
               bankList={[
                 { holder: '○○○', bank: '○○', number: '○○○-○○○-○○○' },
