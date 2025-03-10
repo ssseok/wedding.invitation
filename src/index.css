@@ -122,12 +122,15 @@
   }
 
   body {
-    font-family: 'NanumMyeongjo', serif;
     @apply bg-background text-foreground;
   }
 
   button {
     @apply cursor-pointer;
+  }
+
+  .font-ko {
+    font-family: 'NanumMyeongjo', serif;
   }
 
   .font-en {
@@ -137,9 +140,14 @@
   .animate-heart-beat {
     animation: heart-beat 1.2s infinite linear;
   }
-}
 
-@layer components {
+  .animate-accordion-down {
+    animation: accordion-down 0.2s ease-out;
+  }
+
+  .animate-accordion-up {
+    animation: accordion-up 0.2s ease-out;
+  }
 }
 
 @theme {
@@ -186,6 +194,24 @@
   }
 }
 
+/* 아코디언 애니메이션 */
+@keyframes accordion-down {
+  from {
+    height: 0;
+  }
+  to {
+    height: var(--radix-accordion-content-height);
+  }
+}
+
+@keyframes accordion-up {
+  from {
+    height: var(--radix-accordion-content-height);
+  }
+  to {
+    height: 0;
+  }
+}
 /* 기본 애니메이션 설정 */
 [data-animate],
 [data-animate-layer] {
