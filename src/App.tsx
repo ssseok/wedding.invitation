@@ -9,6 +9,7 @@ import CalendarScreen from '@/components/calendar-screen';
 import Gallery from '@/components/gallery';
 import MapNaver from '@/components/map-naver';
 import MapInfo from '@/components/map-info';
+import BankAccordion from '@/components/bank-accordion';
 
 function App() {
   // 새로고침 시 스크롤 최상단으로 이동
@@ -86,6 +87,44 @@ function App() {
             <h2 className='text-center pb-10'>오시는 길</h2>
             <MapNaver />
             <MapInfo />
+          </Intersect>
+        </section>
+        <section className='my-20'>
+          <Intersect>
+            <div className='flex flex-col justify-center items-center'>
+              <h2 className='text-center'>마음 전하실 곳</h2>
+              <div className='flex justify-center my-4'>
+                <img
+                  src='/ring.png'
+                  alt='반지'
+                  className='w-6 h-6 aspect-square'
+                />
+              </div>
+              <div className='text-center leading-7'>
+                참석이 어려우신 분들을 위해
+                <br />
+                계좌번호를 기재하였습니다.
+                <br />
+                너그러운 마음으로 양해 부탁드립니다.
+              </div>
+            </div>
+            <BankAccordion
+              title='신랑측 계좌번호'
+              bankList={[
+                { holder: '○○○', bank: '○○', number: '○○○-○○○-○○○' },
+                { holder: '○○○', bank: '○○', number: '○○○-○○○-○○○-○○○' },
+                { holder: '○○○', bank: '○○', number: '○○○-○○○-○○○' },
+              ]}
+            />
+            <BankAccordion
+              className='mt-2'
+              title='신부측 계좌번호'
+              bankList={[
+                { holder: '○○○', bank: '○○', number: '○○○-○○○-○○○' },
+                { holder: '○○○', bank: '○○', number: '○○○-○○○-○○○-○○○' },
+                { holder: '○○○', bank: '○○', number: '○○○-○○○-○○○-○○○' },
+              ]}
+            />
           </Intersect>
         </section>
       </Layout>
