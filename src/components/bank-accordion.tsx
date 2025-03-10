@@ -12,11 +12,9 @@ import { Copy } from 'lucide-react';
 export default function BankAccordion({
   title,
   bankList,
-  className,
 }: {
   title: string;
   bankList: { holder: string; bank: string; number: string }[];
-  className?: string;
 }) {
   return (
     <div className='mt-8 mx-8'>
