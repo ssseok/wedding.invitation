@@ -1,11 +1,5 @@
 import { useEffect, useRef } from 'react';
 
-declare global {
-  interface Window {
-    naver: any;
-  }
-}
-
 export default function MapNaver() {
   const mapRef = useRef<HTMLDivElement>(null);
 

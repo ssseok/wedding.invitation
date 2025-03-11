@@ -10,8 +10,14 @@ import Gallery from '@/components/gallery';
 import MapNaver from '@/components/map-naver';
 import MapInfo from '@/components/map-info';
 import BankAccordion from '@/components/bank-accordion';
+import CommentFormDialog from '@/components/comment-form-dialog';
+import CommentList from '@/components/comment-list';
+import { useState } from 'react';
 
 function App() {
+  // 방명록 메시지가 추가되었는지 여부를 추적하는 상태
+  const [messageAdded, setMessageAdded] = useState(false);
+
   // 새로고침 시 스크롤 최상단으로 이동
   // useEffect(() => {
   //   window.onbeforeunload = function pushRefresh() {
@@ -125,6 +131,18 @@ function App() {
               ]}
             />
           </Intersect>
+        </section>
+        <section className='my-20 space-y-8'>
+          <h2 className='text-center'>축하 메시지</h2>
+          <div className='text-center'>
+            <CommentFormDialog
+              onSuccess={() => setMessageAdded((prev) => !prev)}
+            />
+          </div>
+
+          <CommentList
+            onMessageAdded={() => setMessageAdded((prev) => !prev)}
+          />
         </section>
       </Layout>
     </>
