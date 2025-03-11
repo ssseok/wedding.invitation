@@ -1,6 +1,6 @@
-import toast from 'react-hot-toast';
+import { toast } from 'react-hot-toast';
 import supabase from '@/supabase-client';
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import {
   Dialog,
   DialogContent,
@@ -25,13 +25,6 @@ export default function CommentDeleteDialog({
   onDelete,
 }: ICommentDeleteDialogProps) {
   const [password, setPassword] = useState('');
-
-  // isOpen이 false가 될 때 (다이얼로그가 닫힐 때) 패스워드 리셋
-  useEffect(() => {
-    if (!isOpen) {
-      setPassword('');
-    }
-  }, [isOpen]);
 
   const handleDelete = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
