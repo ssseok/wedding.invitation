@@ -15,7 +15,7 @@ import CommentList from '@/components/comment-list';
 import { useState } from 'react';
 
 function App() {
-  // 방명록 메시지가 추가되었는지 여부를 추적하는 상태
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [messageAdded, setMessageAdded] = useState(false);
 
   // 새로고침 시 스크롤 최상단으로 이동

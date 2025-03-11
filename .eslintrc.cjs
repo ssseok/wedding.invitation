@@ -18,6 +18,7 @@ module.exports = {
     ],
     'react/react-in-jsx-scope': 'off',
     'prettier/prettier': 'error',
+
     '@typescript-eslint/no-unused-vars': 'warn',
     '@typescript-eslint/no-explicit-any': 0,
   },
