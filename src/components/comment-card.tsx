@@ -13,15 +13,9 @@ export function CommentCard({ message, onDeleteClick }: ICommentCardProps) {
   };
 
   return (
-    <div className='bg-card p-4 rounded-lg border-b'>
+    <div className='bg-foregroundp-4 border-b'>
       <div className='flex justify-between items-start mb-2'>
         <h3 className=' text-sm'>{message.name}</h3>
-        <time className='text-sm text-muted-foreground'>
-          {formatDate(message.created_at)}
-        </time>
-      </div>
-      <p className='whitespace-pre-wrap font-bold'>{message.comment}</p>
-      <div className='flex justify-end mt-4'>
         <Button
           className='hover:text-red-500 text-xs'
           variant='ghost'
@@ -31,6 +25,10 @@ export function CommentCard({ message, onDeleteClick }: ICommentCardProps) {
           삭제
         </Button>
       </div>
+      <p className='whitespace-pre-wrap font-bold'>{message.comment}</p>
+      <time className='text-sm text-muted-foreground flex justify-end mt-4'>
+        {formatDate(message.created_at)}
+      </time>
     </div>
   );
 }
