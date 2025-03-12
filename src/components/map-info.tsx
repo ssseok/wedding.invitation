@@ -52,9 +52,11 @@ export default function MapInfo() {
           </DropdownMenuContent>
         </DropdownMenu>
       </div>
-      <p className='text-xs mt-2 text-gray-500'>02-491-2727</p>
+      <p className='text-xs mt-2 text-gray-500 dark:text-foreground'>
+        02-491-2727
+      </p>
 
-      <div className='mt-10 space-y-8 text-gray-500'>
+      <div className='mt-10 space-y-8 text-gray-500 dark:text-foreground'>
         <div className='flex items-center'>
           <span className='w-14 text-foreground'>지하철</span>
           <Separator orientation='vertical' className='bg-foreground' />

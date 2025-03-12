@@ -20,7 +20,9 @@ export default function BankAccordion({
     <div className='mt-8 mx-8'>
       <Accordion type='single' collapsible>
         <AccordionItem value='item-1'>
-          <AccordionTrigger>{title}</AccordionTrigger>
+          <AccordionTrigger className='dark:text-background'>
+            {title}
+          </AccordionTrigger>
           <AccordionContent className='space-y-4'>
             {bankList.map(({ holder, bank, number }, i) => (
               <div key={i} className='relative  text-xs'>

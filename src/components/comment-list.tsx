@@ -67,17 +67,17 @@ export default function CommentList({ onMessageAdded }: ICommentListProps) {
   }, [onMessageAdded]);
 
   return (
-    <div className='space-y-4'>
+    <div className='space-y-4 px-8'>
       {isLoading ? (
         <div className='flex flex-col items-center justify-center py-10 space-y-4'>
           <Loader className='w-6 h-6 animate-spin text-muted-foreground' />
         </div>
       ) : messages.length === 0 ? (
         <div className='flex flex-col items-center justify-center py-10 space-y-2'>
-          <p className='text-sm text-muted-foreground'>
+          <p className='text-sm text-muted-foreground dark:text-foreground'>
             아직 메시지가 없습니다.
           </p>
-          <p className='text-sm text-muted-foreground'>
+          <p className='text-sm text-muted-foreground dark:text-foreground'>
             첫 번째 메시지를 남겨보세요!
           </p>
         </div>

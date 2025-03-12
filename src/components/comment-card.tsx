@@ -13,9 +13,9 @@ export function CommentCard({ message, onDeleteClick }: ICommentCardProps) {
   };
 
   return (
-    <div className='bg-foregroundp-4 border-b py-4'>
-      <div className='flex justify-between items-start mb-2'>
-        <h3 className=' text-sm'>{message.name}</h3>
+    <div className='bg-foregroundp-4 border-b py-4 text-sm'>
+      <div className='flex justify-between items-center mb-2 text-xs'>
+        <h3>{message.name}</h3>
         <Button
           className='hover:text-red-500 text-xs'
           variant='ghost'
@@ -26,7 +26,7 @@ export function CommentCard({ message, onDeleteClick }: ICommentCardProps) {
         </Button>
       </div>
       <p className='whitespace-pre-wrap font-bold'>{message.comment}</p>
-      <time className='text-sm text-muted-foreground flex justify-end mt-4'>
+      <time className='text-xs text-muted-foreground flex justify-end mt-4'>
         {formatDate(message.created_at)}
       </time>
     </div>
