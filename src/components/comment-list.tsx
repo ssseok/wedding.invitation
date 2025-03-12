@@ -3,16 +3,24 @@ import { GuestbookEntry } from '@/lib/types';
 import supabase from '@/supabase-client';
 import { CommentCard } from '@/components/comment-card';
 import CommentDeleteDialog from './comment-delete-dialog';
+import Intersect from '@/common/components/intersect';
+import { ChevronDown, Loader } from 'lucide-react';
+import { Button } from '@/common/components/ui/button';
 
 interface ICommentListProps {
   onMessageAdded?: () => void;
 }
 
+const LIST_SIZE = 5;
+
 export default function CommentList({ onMessageAdded }: ICommentListProps) {
   const [messages, setMessages] = useState<GuestbookEntry[]>([]);
   const [deleteId, setDeleteId] = useState<number | null>(null);
+  const [visibleCount, setVisibleCount] = useState(LIST_SIZE);
+  const [isLoading, setIsLoading] = useState(true);
 
   const fetchMessages = async () => {
+    setIsLoading(true);
     const { data, error } = await supabase
       .from('guestbook')
       .select('*')
@@ -21,6 +29,11 @@ export default function CommentList({ onMessageAdded }: ICommentListProps) {
     if (!error && data) {
       setMessages(data);
     }
+    setIsLoading(false);
+  };
+
+  const handleLoadMore = () => {
+    setVisibleCount((prev) => prev + LIST_SIZE);
   };
 
   useEffect(() => {
@@ -51,24 +64,57 @@ export default function CommentList({ onMessageAdded }: ICommentListProps) {
     return () => {
       supabase.removeChannel(channel);
     };
-  }, []);
+  }, [onMessageAdded]);
 
   return (
     <div className='space-y-4'>
-      {messages.map((message) => (
-        <CommentCard
-          key={message.id}
-          message={message}
-          onDeleteClick={() => setDeleteId(message.id)}
-        />
-      ))}
+      {isLoading ? (
+        <div className='flex flex-col items-center justify-center py-10 space-y-4'>
+          <Loader className='w-6 h-6 animate-spin text-muted-foreground' />
+        </div>
+      ) : messages.length === 0 ? (
+        <div className='flex flex-col items-center justify-center py-10 space-y-2'>
+          <p className='text-sm text-muted-foreground'>
+            아직 메시지가 없습니다.
+          </p>
+          <p className='text-sm text-muted-foreground'>
+            첫 번째 메시지를 남겨보세요!
+          </p>
+        </div>
+      ) : (
+        <>
+          {messages.slice(0, visibleCount).map((message, index) => (
+            <Intersect key={message.id} type='data-animate'>
+              <CommentCard
+                message={message}
+                onDeleteClick={() => setDeleteId(message.id)}
+                data-animate-stage={(index % LIST_SIZE) + 1}
+              />
+            </Intersect>
+          ))}
 
-      <CommentDeleteDialog
-        id={deleteId!}
-        isOpen={deleteId !== null}
-        onClose={() => setDeleteId(null)}
-        onDelete={fetchMessages}
-      />
+          <CommentDeleteDialog
+            id={deleteId!}
+            isOpen={deleteId !== null}
+            onClose={() => setDeleteId(null)}
+            onDelete={fetchMessages}
+          />
+
+          {visibleCount < messages.length && (
+            <div className='flex justify-center pt-4'>
+              <Button
+                variant='ghost'
+                size='sm'
+                onClick={handleLoadMore}
+                className='flex items-center gap-2'
+              >
+                더보기
+                <ChevronDown className='w-4 h-4' />
+              </Button>
+            </div>
+          )}
+        </>
+      )}
     </div>
   );
 }

@@ -13,7 +13,7 @@ export function CommentCard({ message, onDeleteClick }: ICommentCardProps) {
   };
 
   return (
-    <div className='bg-foregroundp-4 border-b'>
+    <div className='bg-foregroundp-4 border-b py-4'>
       <div className='flex justify-between items-start mb-2'>
         <h3 className=' text-sm'>{message.name}</h3>
         <Button

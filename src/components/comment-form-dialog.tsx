@@ -37,15 +37,28 @@ export default function CommentFormDialog({
       comment: formData.get('comment') as string,
     };
 
+    if (!data.password) {
+      toast.error('비밀번호를 입력해주세요.');
+      setIsSubmitting(false);
+      return;
+    }
+
+    if (!data.comment) {
+      toast.error('메시지 내용을 작성해주세요.');
+      setIsSubmitting(false);
+      return;
+    }
+
     try {
       await toast.promise(
         async () => {
+          await new Promise((resolve) => setTimeout(resolve, 500));
           const result = await supabase.from('guestbook').insert([data]);
           if (result.error) throw result.error;
           return result;
         },
         {
-          loading: '메시지를 등록하고 있습니다...',
+          loading: '요청중...',
           success: '축하 메시지가 등록되었습니다! 🎉',
           error: '오류가 발생했습니다. 다시 시도해주세요.',
         },
@@ -88,7 +101,6 @@ export default function CommentFormDialog({
               id='password'
               name='password'
               type='password'
-              required
               placeholder='삭제시 필요합니다'
             />
           </div>
@@ -100,7 +112,6 @@ export default function CommentFormDialog({
               id='comment'
               name='comment'
               placeholder='축하 메시지를 작성해주세요.'
-              required
               className='min-h-[100px]'
             />
           </div>
