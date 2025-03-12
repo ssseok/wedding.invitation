@@ -12,6 +12,7 @@ import MapInfo from '@/components/map-info';
 import BankAccordion from '@/components/bank-accordion';
 import CommentFormDialog from '@/components/comment-form-dialog';
 import CommentList from '@/components/comment-list';
+import Share from '@/components/share';
 import { useState } from 'react';
 
 function App() {
@@ -132,18 +133,36 @@ function App() {
             />
           </Intersect>
         </section>
-        <section className='my-20 space-y-8'>
-          <h2 className='text-center'>축하 메시지</h2>
-          <div className='text-center'>
-            <CommentFormDialog
-              onSuccess={() => setMessageAdded((prev) => !prev)}
-            />
-          </div>
+        <section className='my-20 '>
+          <Intersect className='space-y-8'>
+            <h2 className='text-center'>축하 메시지</h2>
+            <div className='text-center'>
+              <CommentFormDialog
+                onSuccess={() => setMessageAdded((prev) => !prev)}
+              />
+            </div>
 
-          <CommentList
-            onMessageAdded={() => setMessageAdded((prev) => !prev)}
-          />
+            <CommentList
+              onMessageAdded={() => setMessageAdded((prev) => !prev)}
+            />
+          </Intersect>
         </section>
+        <footer className='relative mt-20 pb-10'>
+          <div className='flex items-center justify-center'>
+            <Share />
+          </div>
+          <p className='mt-20 text-xs'>
+            © 2025{' '}
+            <a
+              href='https://www.hyun-seok.com/'
+              target='_blank'
+              className='font-bold'
+            >
+              ssseok
+            </a>
+            . All rights reserved.
+          </p>
+        </footer>
       </Layout>
     </>
   );
