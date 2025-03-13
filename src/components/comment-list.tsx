@@ -6,6 +6,7 @@ import CommentDeleteDialog from './comment-delete-dialog';
 import Intersect from '@/common/components/intersect';
 import { ChevronDown, Loader } from 'lucide-react';
 import { Button } from '@/common/components/ui/button';
+import LoaderLoading from '@/common/components/loader-loading';
 
 interface ICommentListProps {
   onMessageAdded?: () => void;
@@ -69,9 +70,7 @@ export default function CommentList({ onMessageAdded }: ICommentListProps) {
   return (
     <div className='space-y-4 px-8'>
       {isLoading ? (
-        <div className='flex flex-col items-center justify-center py-10 space-y-4'>
-          <Loader className='w-6 h-6 animate-spin text-muted-foreground' />
-        </div>
+        <LoaderLoading />
       ) : messages.length === 0 ? (
         <div className='flex flex-col items-center justify-center py-10 space-y-2'>
           <p className='text-sm text-muted-foreground dark:text-foreground'>

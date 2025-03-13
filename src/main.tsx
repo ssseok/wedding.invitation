@@ -1,7 +1,7 @@
 import ReactDOM from 'react-dom/client';
 import App from '@/App.tsx';
 import '@/index.css';
-import HotToast from '@/components/hot-toast';
+import HotToast from '@/common/components/hot-toast';
 
 window.Kakao.init(import.meta.env.VITE_KAKAO_API_KEY);
 window.Kakao.isInitialized();
