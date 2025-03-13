@@ -1,13 +1,16 @@
 import { useState } from 'react';
 import { VolumeOff } from 'lucide-react';
 
-export default function VideoPlayer() {
-  const [muted, setMuted] = useState<boolean>(true);
+interface VideoPlayerProps {
+  videoUrl: string;
+  posterUrl?: string;
+}
 
+export default function VideoPlayer({ videoUrl, posterUrl }: VideoPlayerProps) {
+  const [muted, setMuted] = useState<boolean>(true);
   const onClick = () => {
     setMuted((prev) => !prev);
   };
-
   return (
     <div className='relative w-full aspect-4/5'>
       <div className='absolute top-0 inset-x-0 -z-10 overflow-hidden'>
@@ -18,12 +21,9 @@ export default function VideoPlayer() {
           autoPlay
           muted={muted}
           playsInline
-          poster='https://t1.daumcdn.net/brunch/service/user/d4v5/image/qu9IRzx1uS0s1LEHJrfpndwToP4.jpeg'
+          poster={posterUrl}
         >
-          <source
-            src='https://velog.velcdn.com/images/bepyan/post/4b5eac52-8d8f-465f-8087-564517fa4f35/image.mp4'
-            type='video/mp4'
-          />
+          <source src={videoUrl} type='video/mp4' />
           영상을 호한하지 않는 브라우저입니다.
         </video>
       </div>

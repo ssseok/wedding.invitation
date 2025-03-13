@@ -278,6 +278,18 @@
 [data-animate-layer] > *:nth-child(20) {
   --stagger: 20;
 }
+[data-animate-layer] > *:nth-child(21) {
+  --stagger: 21;
+}
+[data-animate-layer] > *:nth-child(22) {
+  --stagger: 22;
+}
+[data-animate-layer] > *:nth-child(23) {
+  --stagger: 23;
+}
+[data-animate-layer] > *:nth-child(25) {
+  --stagger: 25;
+}
 /* 스테이지 방식 순차 애니메이션 */
 [data-animate] > [data-animate-stage='1'] {
   --stagger: 1;
