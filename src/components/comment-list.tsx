@@ -4,7 +4,7 @@ import supabase from '@/supabase-client';
 import { CommentCard } from '@/components/comment-card';
 import CommentDeleteDialog from './comment-delete-dialog';
 import Intersect from '@/common/components/intersect';
-import { ChevronDown, Loader } from 'lucide-react';
+import { ChevronDown } from 'lucide-react';
 import { Button } from '@/common/components/ui/button';
 import LoaderLoading from '@/common/components/loader-loading';
 
