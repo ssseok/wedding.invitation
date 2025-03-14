@@ -131,7 +131,7 @@
 }
 
 @theme {
-  --font-ko: 'NanumMyeongjo', serif;
+  --font-ko: 'NanumMyeongjo', serif !important;
   --font-en: 'Cormorant SC', serif;
   --animate-fade-out: fade-out 0.8s ease-in-out forwards;
   --animate-heart-beat: heart-beat 1.2s infinite linear;
