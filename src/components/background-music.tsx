@@ -8,37 +8,41 @@ interface BackgroundMusicProps {
 
 export default function BackgroundMusic({ hasVideo }: BackgroundMusicProps) {
   const [isPlaying, setIsPlaying] = useState<boolean>(false);
+  const [isMuted, setIsMuted] = useState<boolean>(false);
   const [hasUserInteraction, setHasUserInteraction] = useState<boolean>(false);
   const audioRef = useRef<HTMLAudioElement>(null);
 
-  // 컴포넌트 마운트 시 로컬 스토리지에서 사용자 상호작용 상태 복원
   useEffect(() => {
     const savedInteraction = localStorage.getItem('hasUserInteraction');
     if (savedInteraction === 'true') {
       setHasUserInteraction(true);
     }
-  }, []);
+  }, [hasUserInteraction, hasVideo]);
 
-  // 비디오 상태가 변경될 때마다 음악 상태 업데이트
   useEffect(() => {
     if (!audioRef.current) return;
 
     if (hasVideo) {
-      // 비디오가 있으면 음악 정지
       audioRef.current.pause();
       setIsPlaying(false);
-    } else if (hasUserInteraction) {
-      // 비디오가 없고 사용자 상호작용이 있으면 음악 재생 시도
+    } else {
+      audioRef.current.muted = true;
+      setIsMuted(true);
+
       const playPromise = audioRef.current.play();
 
       if (playPromise !== undefined) {
         playPromise
           .then(() => {
-            // 재생 성공
             setIsPlaying(true);
+            console.log('음소거 상태로 자동 재생 성공');
+
+            if (hasUserInteraction) {
+              audioRef.current!.muted = false;
+              setIsMuted(false);
+            }
           })
           .catch((error) => {
-            // 재생 실패 (자동 재생 정책 등으로 인해)
             console.error('자동 재생 실패:', error);
             setIsPlaying(false);
           });
@@ -48,10 +52,12 @@ export default function BackgroundMusic({ hasVideo }: BackgroundMusicProps) {
 
   const handleInitialPlay = () => {
     setHasUserInteraction(true);
-    // 로컬 스토리지에 사용자 상호작용 상태 저장
     localStorage.setItem('hasUserInteraction', 'true');
 
     if (audioRef.current) {
+      audioRef.current.muted = false;
+      setIsMuted(false);
+
       const playPromise = audioRef.current.play();
 
       if (playPromise !== undefined) {
@@ -74,6 +80,9 @@ export default function BackgroundMusic({ hasVideo }: BackgroundMusicProps) {
       audioRef.current.pause();
       setIsPlaying(false);
     } else {
+      audioRef.current.muted = false;
+      setIsMuted(false);
+
       const playPromise = audioRef.current.play();
 
       if (playPromise !== undefined) {
@@ -91,7 +100,6 @@ export default function BackgroundMusic({ hasVideo }: BackgroundMusicProps) {
 
   return (
     <>
-      {/* 배경음악 컨트롤 */}
       <div className='fixed top-0 left-0 right-0 z-40'>
         <div className='max-w-screen-sm mx-auto relative'>
           <div className='absolute top-4 right-4'>
@@ -99,7 +107,7 @@ export default function BackgroundMusic({ hasVideo }: BackgroundMusicProps) {
               <Button
                 variant='secondary'
                 size='sm'
-                className='rounded-full bg-white/80 hover:bg-white/90 shadow-sm'
+                className='rounded-full bg-white/80 hover:bg-white/90 shadow-sm animate-pulse z-50'
                 onClick={handleInitialPlay}
               >
                 <Play className='w-4 h-4' />
@@ -111,7 +119,7 @@ export default function BackgroundMusic({ hasVideo }: BackgroundMusicProps) {
                 className='rounded-full bg-white/80 hover:bg-white/90 shadow-sm'
                 onClick={toggleAudio}
               >
-                {isPlaying ? (
+                {isPlaying && !isMuted ? (
                   <Volume2 className='w-4 h-4' />
                 ) : (
                   <VolumeX className='w-4 h-4' />
@@ -122,7 +130,6 @@ export default function BackgroundMusic({ hasVideo }: BackgroundMusicProps) {
         </div>
       </div>
 
-      {/* 배경 음악 */}
       <audio ref={audioRef} loop preload='auto' src='/music/here-with-me.mp3' />
     </>
   );
