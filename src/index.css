@@ -118,13 +118,12 @@
 
 @layer base {
   * {
+    font-family: 'NanumMyeongjo', serif !important;
     @apply border-border outline-ring/50;
   }
 
   html,
-  body,
-  * {
-    font-family: 'NanumMyeongjo', serif !important;
+  body {
     @apply bg-background text-foreground font-ko;
   }
 
