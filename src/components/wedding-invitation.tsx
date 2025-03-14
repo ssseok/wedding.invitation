@@ -14,7 +14,7 @@ export default function WeddingInvitation() {
           <Separator orientation='vertical' className='bg-foreground' />
           <span>○○○</span>
         </div>
-        <div className='mt-4 text-sm text-gy-6 leading-7'>
+        <div className='mt-4 text-sm text-gy-6 leading-7 font-ko'>
           ○○○○년 ○○월 ○○일 ○○일 낮 ○○:○○
           <br />
           ○○○웨딩 ○F ○○홀
