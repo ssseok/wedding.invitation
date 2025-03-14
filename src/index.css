@@ -121,7 +121,9 @@
     @apply border-border outline-ring/50;
   }
 
+  html,
   body {
+    font-family: 'NanumMyeongjo', serif !important;
     @apply bg-background text-foreground font-ko;
   }
 
