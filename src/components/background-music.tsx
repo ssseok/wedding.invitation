@@ -123,7 +123,7 @@ export default function BackgroundMusic({ hasVideo }: BackgroundMusicProps) {
       </div>
 
       {/* 배경 음악 */}
-      <audio ref={audioRef} loop preload='auto' src='/music/everything.mp3' />
+      <audio ref={audioRef} loop preload='auto' src='/music/here-with-me.mp3' />
     </>
   );
 }
