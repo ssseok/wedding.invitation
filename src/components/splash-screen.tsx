@@ -59,7 +59,7 @@ function SplashScreen({
     <div className='fixed inset-0 z-50 backdrop-blur-sm bg-foreground/50 max-w-screen-sm mx-auto w-full h-full bg-cover bg-center bg-no-repeat animate-fade-out opacity-100 delay-3000 font-ko'>
       <div className='absolute inset-0 flex flex-col items-center justify-center mx-auto gap-4'>
         <Heart />
-        <div className='text-background text-xl min-h-[2rem]'>
+        <div className='text-background text-xl min-h-[2rem] font-ko'>
           {currentText}
           <span className='animate-pulse'>|</span>
         </div>
