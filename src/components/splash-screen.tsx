@@ -1,5 +1,6 @@
 import { memo, useLayoutEffect, useState, useEffect } from 'react';
 import { createPortal } from 'react-dom';
+import { SPLASH_TEXT } from '../../config';
 
 interface SplashScreenProps {
   fadeOutTime?: number;
@@ -10,8 +11,6 @@ const splashScreenElement = document.getElementById(
   'splash-screen',
 ) as HTMLElement;
 
-const TEXTS = [`○○, ○○ 결혼합니다.`];
-
 // SplashScreen 컴포넌트
 function SplashScreen({
   fadeOutTime = 3000,
@@ -21,15 +20,17 @@ function SplashScreen({
 
   // 타이핑 효과
   useEffect(() => {
-    if (currentText.length < TEXTS[textIndex].length) {
+    if (currentText.length < SPLASH_TEXT[textIndex].length) {
       const timer = setTimeout(() => {
-        setCurrentText((prev) => prev + TEXTS[textIndex][currentText.length]);
+        setCurrentText(
+          (prev) => prev + SPLASH_TEXT[textIndex][currentText.length],
+        );
       }, 50);
 
       return () => clearTimeout(timer);
     } else {
       const timer = setTimeout(() => {
-        if (textIndex < TEXTS.length - 1) {
+        if (textIndex < SPLASH_TEXT.length - 1) {
           setTextIndex((prev) => prev + 1);
           setCurrentText('');
         }

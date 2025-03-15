@@ -1,4 +1,10 @@
 import { Separator } from '@/common/components/ui/separator';
+import {
+  GROOM_NAME,
+  BRIDE_NAME,
+  WEDDING_DATE,
+  WEDDING_LOCATION,
+} from '../../config';
 
 export default function WeddingInvitation() {
   return (
@@ -10,14 +16,14 @@ export default function WeddingInvitation() {
       </div>
       <div className='text-center'>
         <div className='flex justify-center items-center gap-1 h-3 space-x-0.5'>
-          <span>○○○</span>
+          <span>{GROOM_NAME}</span>
           <Separator orientation='vertical' className='bg-foreground' />
-          <span>○○○</span>
+          <span>{BRIDE_NAME}</span>
         </div>
         <div className='mt-4 text-sm text-gy-6 leading-7'>
-          ○○○○년 ○○월 ○○일 ○○일 낮 ○○:○○
+          {WEDDING_DATE}
           <br />
-          ○○○웨딩 ○F ○○홀
+          {WEDDING_LOCATION}
         </div>
       </div>
     </>

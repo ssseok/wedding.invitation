@@ -18,15 +18,18 @@ import BackgroundMusic from '@/components/background-music';
 import LoaderLoading from '@/common/components/loader-loading';
 import { useVideoCheck } from '@/hooks/use-video-check';
 import { useState } from 'react';
-
-const VIDEO_URL = '';
-const POSTER_URL =
-  'https://t1.daumcdn.net/brunch/service/user/d4v5/image/qu9IRzx1uS0s1LEHJrfpndwToP4.jpeg';
+import {
+  BRIDE_ACCOUNTS,
+  GALLERY_IMAGES,
+  GROOM_ACCOUNTS,
+  POSTER_URL,
+  VIDEO_URL,
+  WEDDING_INVITATION_IMAGE,
+} from '../config';
 
 function App() {
   const { hasVideo, isChecking } = useVideoCheck(VIDEO_URL);
 
-  // 방명록 메시지가 추가되었는지 여부를 추적하는 상태
   const [, setMessageAdded] = useState(false);
 
   return (
@@ -53,7 +56,7 @@ function App() {
             <div className='mt-10'>
               <img
                 className='w-full h-full  pointer-events-none'
-                src='https://imagedelivery.net/9PYUDgg_yiUa2u-j77sFBg/1164b3d2-66dc-4e7f-bfab-4f7b2a991700/public'
+                src={WEDDING_INVITATION_IMAGE}
                 alt='결혼사진'
               />
             </div>
@@ -77,36 +80,10 @@ function App() {
         {/* 결혼식 갤러리 */}
         <section className='my-20'>
           <Intersect>
-            <Gallery
-              images={[
-                'https://imagedelivery.net/9PYUDgg_yiUa2u-j77sFBg/b64b73bf-f02c-42a7-55f9-1dcf79afa700/public',
-                'https://imagedelivery.net/9PYUDgg_yiUa2u-j77sFBg/be9c5bb8-696e-4711-c00d-ccdaf35bc000/public',
-                'https://imagedelivery.net/9PYUDgg_yiUa2u-j77sFBg/47a01f11-b2b0-411c-578f-2e548e0dcc00/public',
-                'https://imagedelivery.net/9PYUDgg_yiUa2u-j77sFBg/75b30063-2783-4260-8f3c-9fa9985aa600/public',
-                'https://imagedelivery.net/9PYUDgg_yiUa2u-j77sFBg/d0f72f55-c734-412a-2e89-9f00077d8f00/public',
-                'https://imagedelivery.net/9PYUDgg_yiUa2u-j77sFBg/ffda64ea-96b7-42b4-4bcf-32dae73a8700/public',
-                'https://imagedelivery.net/9PYUDgg_yiUa2u-j77sFBg/dcf70027-eb72-4555-4c47-b586076bd300/public',
-                'https://imagedelivery.net/9PYUDgg_yiUa2u-j77sFBg/f3136807-5528-4684-0cc0-8ac1b396b400/public',
-                'https://imagedelivery.net/9PYUDgg_yiUa2u-j77sFBg/779adc77-561f-4c60-991b-2479589be700/public',
-                'https://imagedelivery.net/9PYUDgg_yiUa2u-j77sFBg/45acb57a-0415-4ef3-bf59-4287eadbd800/public',
-                'https://imagedelivery.net/9PYUDgg_yiUa2u-j77sFBg/1164b3d2-66dc-4e7f-bfab-4f7b2a991700/public',
-                'https://imagedelivery.net/9PYUDgg_yiUa2u-j77sFBg/765c3547-13ab-46cb-a5fb-44d4279a1500/public',
-                'https://imagedelivery.net/9PYUDgg_yiUa2u-j77sFBg/bdc6075b-bc9c-49ed-0061-abe64e862200/public',
-                'https://imagedelivery.net/9PYUDgg_yiUa2u-j77sFBg/9acd1762-59d5-4f10-e1f4-df98365e4300/public',
-                'https://imagedelivery.net/9PYUDgg_yiUa2u-j77sFBg/23c7ad63-d811-4787-fdb8-b5e78aeaaf00/public',
-                'https://imagedelivery.net/9PYUDgg_yiUa2u-j77sFBg/dbb6da6a-812f-4c7b-811f-3dce367c0500/public',
-                'https://imagedelivery.net/9PYUDgg_yiUa2u-j77sFBg/fe4ba775-0ead-429e-42a7-23fbafa31700/public',
-                'https://imagedelivery.net/9PYUDgg_yiUa2u-j77sFBg/d4a02fde-d6d1-4959-e96b-7bd8a3724b00/public',
-                'https://imagedelivery.net/9PYUDgg_yiUa2u-j77sFBg/7fa74aaa-8f2d-4458-6ccd-dc6f8425d300/public',
-                'https://imagedelivery.net/9PYUDgg_yiUa2u-j77sFBg/b5cf04d1-4cdf-4b6d-eaf7-3b176dce4400/public',
-                'https://imagedelivery.net/9PYUDgg_yiUa2u-j77sFBg/ae7d220a-3c8c-4480-dbc4-3a64ca55fa00/public',
-                'https://imagedelivery.net/9PYUDgg_yiUa2u-j77sFBg/20aa8e87-32c2-455d-db7b-5185d953a400/public',
-                'https://imagedelivery.net/9PYUDgg_yiUa2u-j77sFBg/a1bc1868-f673-4ca0-7798-48a091ce1e00/public',
-                'https://imagedelivery.net/9PYUDgg_yiUa2u-j77sFBg/58bd90d8-408c-4a53-14ec-51321ac66500/public',
-              ]}
-            />
+            <Gallery images={GALLERY_IMAGES} />
           </Intersect>
         </section>
+        {/* 찾아오시는 길*/}
         <section className='my-20'>
           <Intersect>
             <h2 className='text-center pb-10'>오시는 길</h2>
@@ -114,6 +91,7 @@ function App() {
             <MapInfo />
           </Intersect>
         </section>
+        {/* 계좌번호 */}
         <section className='my-20'>
           <Intersect>
             <div className='flex flex-col justify-center items-center'>
@@ -133,24 +111,11 @@ function App() {
                 너그러운 마음으로 양해 부탁드립니다.
               </div>
             </div>
-            <BankAccordion
-              title='신랑측 계좌번호'
-              bankList={[
-                { holder: '○○○', bank: '○○', number: '○○○-○○○-○○○' },
-                { holder: '○○○', bank: '○○', number: '○○○-○○○-○○○-○○○' },
-                { holder: '○○○', bank: '○○', number: '○○○-○○○-○○○' },
-              ]}
-            />
-            <BankAccordion
-              title='신부측 계좌번호'
-              bankList={[
-                { holder: '○○○', bank: '○○', number: '○○○-○○○-○○○' },
-                { holder: '○○○', bank: '○○', number: '○○○-○○○-○○○-○○○' },
-                { holder: '○○○', bank: '○○', number: '○○○-○○○-○○○-○○○' },
-              ]}
-            />
+            <BankAccordion title='신랑측 계좌번호' bankList={GROOM_ACCOUNTS} />
+            <BankAccordion title='신부측 계좌번호' bankList={BRIDE_ACCOUNTS} />
           </Intersect>
         </section>
+        {/* 방명록 */}
         <section className='my-20 '>
           <Intersect className='space-y-8'>
             <h2 className='text-center'>축하 메시지</h2>
@@ -165,6 +130,7 @@ function App() {
             />
           </Intersect>
         </section>
+        {/* 공유하기 */}
         <footer className='relative mt-20 pb-10'>
           <div className='flex items-center justify-center'>
             <Share />

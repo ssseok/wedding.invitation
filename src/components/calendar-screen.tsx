@@ -1,9 +1,10 @@
 import { Calendar } from '@/common/components/ui/calendar';
+import { WEDDING_DATE } from '../../config';
 import { parse } from 'date-fns';
 import { ko } from 'date-fns/locale';
 
 export default function CalendarScreen() {
-  const weddingDate = parse('2025.05.10', 'yyyy.MM.dd', new Date());
+  const weddingDate = parse(WEDDING_DATE, 'yyyy.MM.dd', new Date());
 
   return (
     <>
