@@ -31,13 +31,13 @@ export default function ContactDialog({
         <DialogTitle className='p-4 text-center'>연락처</DialogTitle>
         <div className='px-6 pb-4 text-sm space-y-4'>
           <div className='space-y-1'>
-            {groomList.map((contact, i) => (
-              <ContactItem key={i} contact={contact} />
+            {groomList.map((contact, index) => (
+              <ContactItem key={index} contact={contact} />
             ))}
           </div>
           <div className='space-y-1'>
-            {priestList.map((contact, i) => (
-              <ContactItem key={i} contact={contact} />
+            {priestList.map((contact, index) => (
+              <ContactItem key={index} contact={contact} />
             ))}
           </div>
         </div>

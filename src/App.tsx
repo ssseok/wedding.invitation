@@ -29,7 +29,6 @@ import {
 
 function App() {
   const { hasVideo, isChecking } = useVideoCheck(VIDEO_URL);
-
   const [, setMessageAdded] = useState(false);
 
   return (
