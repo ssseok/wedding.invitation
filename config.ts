@@ -24,6 +24,8 @@ export const WEDDING_LOCATION_BUS = [
   '○○○○ 하차: ○○○, ○○○, ○○○',
 ];
 export const WEDDING_PARKING = '○○○대 동시 주차 가능 (무료)';
+export const WEDDING_MAP_LOT = 37.5739539541608; // 경도
+export const WEDDING_MAP_LAT = 127.085105452975; // 위도
 
 // 신랑 & 신부 정보
 export const GROOM_NAME = '○○○';
@@ -85,9 +87,3 @@ export const GALLERY_IMAGES = [
   'https://imagedelivery.net/9PYUDgg_yiUa2u-j77sFBg/a1bc1868-f673-4ca0-7798-48a091ce1e00/public',
   'https://imagedelivery.net/9PYUDgg_yiUa2u-j77sFBg/58bd90d8-408c-4a53-14ec-51321ac66500/public',
 ];
-
-// 방명록 , 공유하기, 지도 API 키
-export const NAVER_MAP_CLIENT_ID = '';
-export const SUPABASE_URL = '';
-export const SUPABASE_API_KEY = '';
-export const KAKAO_API_KEY = '';

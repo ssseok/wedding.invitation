@@ -1,10 +1,15 @@
+import {
+  WEDDING_ADDRESS,
+  WEDDING_MAP_LAT,
+  WEDDING_MAP_LOT,
+} from '../../config';
 import { useEffect, useRef } from 'react';
 
 export default function MapNaver() {
   const mapRef = useRef<HTMLDivElement>(null);
 
-  const lot = 37.5739539541608;
-  const lat = 127.085105452975;
+  const lot = WEDDING_MAP_LOT;
+  const lat = WEDDING_MAP_LAT;
 
   useEffect(() => {
     if (!mapRef.current) return;
@@ -32,7 +37,7 @@ export default function MapNaver() {
       content: `
         <div class="p-4 bg-white  shadow-lg text-center">
           <h3 class="font-bold text-lg">결혼식장</h3>
-          <p class="text-gray-600">서울 중랑구 면목로 238 중랑구민회관</p>
+          <p class="text-gray-600">${WEDDING_ADDRESS}</p>
         </div>
       `,
       borderColor: 'transparent',

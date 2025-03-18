@@ -22,7 +22,7 @@
       "@components/*": ["src/components/*"],
       "@pages/*": ["src/pages/*"],
       "@styles/*": ["src/styles/*"],
-      "@libs/*": ["src/libs/*"],
+      "@lib/*": ["src/lib/*"],
       "@hooks/*": ["src/hooks/*"],
       "@assets/*": ["src/assets/*"]
     },
