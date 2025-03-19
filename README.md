@@ -11,6 +11,8 @@
 **Demo Website**: [**wedding.invitation**](https://weddinginvitation-mu.vercel.app/)  
 **Open source Code**: [**Github**](https://github.com/ssseok/wedding.invitation)
 
+**WIki**: [**Wiki**](https://github.com/ssseok/wedding.invitation/wiki) (**Wiki 읽는 것을 추천합니다**)
+
 &nbsp;
 
 ## 👋 소개
