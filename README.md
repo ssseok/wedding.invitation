@@ -1,5 +1,5 @@
 <h1 align="center">
-  React Wedding Invitation Template (결혼 청첩장 템플릿)
+  Wedding Invitation React.js Template (결혼 청첩장 템플릿)
 </h1>
 
 <p align="center">
