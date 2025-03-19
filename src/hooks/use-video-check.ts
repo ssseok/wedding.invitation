@@ -7,17 +7,14 @@ export function useVideoCheck(videoUrl: string) {
   useEffect(() => {
     const checkVideo = async () => {
       try {
-        // HEAD 요청 대신 실제 비디오 요소로 체크
         const video = document.createElement('video');
         video.src = videoUrl;
 
-        // 비디오 로드 이벤트 처리
         video.onloadeddata = () => {
           setHasVideo(true);
           setIsChecking(false);
         };
 
-        // 에러 처리
         video.onerror = () => {
           setHasVideo(false);
           setIsChecking(false);

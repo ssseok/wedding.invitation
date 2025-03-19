@@ -27,7 +27,7 @@ export default function VideoPlayer({ videoUrl, posterUrl }: VideoPlayerProps) {
   };
 
   return (
-    <div className='relative w-full aspect-4/5'>
+    <div className='relative w-full aspect-4/5 z-30'>
       {isLoading && (
         <div className='absolute inset-0 flex items-center justify-center bg-gray-100'>
           <LoaderLoading />
