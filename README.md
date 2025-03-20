@@ -17,6 +17,9 @@
 
 ## ❤️시연 영상
 
+
+
+
 &nbsp;
 
 ## 👋 소개
@@ -31,16 +34,61 @@ React 기반으로 만든 모바일 결혼청첩장입니다.
 
 ## ✨ 기능
 
-- ✨ [스플래시 화면](https://github.com/ssseok/wedding.invitation/wiki/%EA%B8%B0%EB%8A%A5-%7C-%EC%8A%A4%ED%94%8C%EB%9E%98%EC%8B%9C-%ED%99%94%EB%A9%B4)
-- 💅 [스크롤 애니메이션 & 결혼 축하 문구](https://github.com/ssseok/wedding.invitation/wiki/%EA%B8%B0%EB%8A%A5-%7C-%EC%8A%A4%ED%81%AC%EB%A1%A4-%EC%95%A0%EB%8B%88%EB%A9%94%EC%9D%B4%EC%85%98-&-%EA%B2%B0%ED%98%BC-%EC%B6%95%ED%95%98-%EB%AC%B8%EA%B5%AC)
-- ☎️ [연락처](https://github.com/ssseok/wedding.invitation/wiki/%EA%B8%B0%EB%8A%A5-%7C-%EC%97%B0%EB%9D%BD%EC%B2%98-%ED%99%94%EB%A9%B4)
-- 📆  [캘린더](https://github.com/ssseok/wedding.invitation/wiki/%EA%B8%B0%EB%8A%A5-%7C-%EC%BA%98%EB%A6%B0%EB%8D%94)
-- 📸 [갤러리](https://github.com/ssseok/wedding.invitation/wiki/%EA%B8%B0%EB%8A%A5-%7C-%EA%B0%A4%EB%9F%AC%EB%A6%AC)
-- 🗺️ [지도를 활용한 위치](https://github.com/ssseok/wedding.invitation/wiki/%EA%B8%B0%EB%8A%A5-%7C-%EC%A7%80%EB%8F%84%EB%A5%BC-%ED%99%9C%EC%9A%A9%ED%95%9C-%EC%9C%84%EC%B9%98)
-- 💸 [계좌번호](https://github.com/ssseok/wedding.invitation/wiki/%EA%B8%B0%EB%8A%A5-%7C-%EA%B3%84%EC%A2%8C%EB%B2%88%ED%98%B8)
-- 💬 [축하 메시지(방명록)](https://github.com/ssseok/wedding.invitation/wiki/%EA%B8%B0%EB%8A%A5-%7C-%EC%B6%95%ED%95%98-%EB%A9%94%EC%8B%9C%EC%A7%80(%EB%B0%A9%EB%AA%85%EB%A1%9D))
-- 👨🏼‍💻 [공유하기](https://github.com/ssseok/wedding.invitation/wiki/%EA%B8%B0%EB%8A%A5-%7C-%EA%B3%B5%EC%9C%A0%ED%95%98%EA%B8%B0)
-- 🎵 [배경음악(useVideoCheck(배너 비디오가 있는지 체크해 주는 hook))](https://github.com/ssseok/wedding.invitation/wiki/%EA%B8%B0%EB%8A%A5-%7C-%EB%B0%B0%EA%B2%BD%EC%9D%8C%EC%95%85(useVideoCheck-hook))
+<details>
+<summary>✨ [스플래시 화면]</summary>
+<br/>
+<video src="https://github.com/user-attachments/assets/3972e9f9-b45b-4fd0-a003-bb1889a8d06d">
+</details>
+
+<details>
+<summary>💅 [스크롤 애니메이션 & 결혼 축하 문구 & 연락처]</summary>
+<br/>
+<video src="https://github.com/user-attachments/assets/c22c8350-0dcf-4822-92b8-2dd596783a0f" >
+</details>
+
+<details>
+<summary>📆  [캘린더]</summary>
+<br/>
+<video src="https://github.com/user-attachments/assets/c60605db-7c59-419c-88ed-66adbb1281aa">
+</details>
+
+<details>
+<summary>📸 [갤러리]</summary>
+<br/>
+<video src="https://github.com/user-attachments/assets/d178b160-9e23-4dcb-ae7b-0b0db8569c7e" controls></video>
+<video src="https://github.com/user-attachments/assets/62c9aa6a-5ada-40a7-8f8b-7b1bcd8fc137" controls></video>
+</details>
+
+<details>
+<summary>🗺️ [지도를 활용한 위치]</summary>
+<br/>
+<video src="https://github.com/user-attachments/assets/4f33f608-7239-4425-9902-086ae426faa8"></video>
+</details>
+
+<details>
+<summary>💸 [계좌번호]</summary>
+<br/>
+<video src="https://github.com/user-attachments/assets/b275177c-e98c-4282-bbd6-820dafa15742"></video>
+</details>
+
+<details>
+<summary>💬 [축하 메시지(방명록)]</summary>
+<br/>
+<video src="https://github.com/user-attachments/assets/e3e779fd-133f-4382-bd1f-db83ce7a079a" controls></video>
+<video src="https://github.com/user-attachments/assets/484360f3-4053-4f60-a2f2-08efff789ea1" controls></video>
+</details>
+
+<details>
+<summary>👨🏼‍💻 [공유하기](</summary>
+<br/>
+<video src="https://github.com/user-attachments/assets/aa2df921-8cdb-432d-8e83-c2db10750a1d"></video>
+</details>
+
+<details>
+<summary>🎵 [배경음악(useVideoCheck(배너 비디오가 있는지 체크해 주는 hook))](</summary>
+<br/>
+<a href="https://github.com/ssseok/wedding.invitation/wiki/%EA%B8%B0%EB%8A%A5-%7C-%EB%B0%B0%EA%B2%BD%EC%9D%8C%EC%95%85(useVideoCheck-hook)">배경음악 Wiki 보기<a/>
+</details>
 
 &nbsp;
 
